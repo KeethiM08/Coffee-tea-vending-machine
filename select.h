@@ -1,5 +1,5 @@
-#ifndef VENDING_MACHINE_H_INCLUDED
-#define VENDING_MACHINE_H_INCLUDED
+#ifndef SELECT_H_INCLUDED
+#define SELECT_H_INCLUDED
 
 #include <stdio.h>
 float selectHotCoffee();
