@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-// Function declarations
 float selectHotCoffee();
 float selectColdCoffee();
 float selectTea();
@@ -197,13 +195,10 @@ void loadActivity(int *num_customers, int *num_hot_coffees, int *num_cold_coffee
         *num_cookies = 0;
         return;
     }
-
-    // Read and ignore the header
     char buffer[256];
     fgets(buffer, sizeof(buffer), file); // Skip the first line
     fgets(buffer, sizeof(buffer), file); // Skip the second line
 
-    // Read values
     fscanf(file, "Number of Customers Served: %d\n", num_customers);
     fscanf(file, "Number of Hot Coffees Sold: %d\n", num_hot_coffees);
     fscanf(file, "Number of Cold Coffees Sold: %d\n", num_cold_coffees);
@@ -222,8 +217,6 @@ int main() {
     int num_cold_coffees = 0;
     int num_teas = 0;
     int num_customers = 0;
-
-    // Load previous activity
     loadActivity(&num_customers, &num_hot_coffees, &num_cold_coffees, &num_teas, &num_cookies);
 
     printf("Welcome to the Coffee or Tea Vending Machine!\n");
