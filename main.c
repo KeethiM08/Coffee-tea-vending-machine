@@ -17,8 +17,6 @@ int main() {
     int num_cold_coffees = 0;
     int num_teas = 0;
     int num_customers = 0;
-
-    // Load previous activity
     loadActivity(&num_customers, &num_hot_coffees, &num_cold_coffees, &num_teas, &num_cookies);
 
     printf("Welcome to the Coffee or Tea Vending Machine!\n");
