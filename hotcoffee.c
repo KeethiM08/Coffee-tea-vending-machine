@@ -1,6 +1,7 @@
 #include "select.h"
 
-  printf("\nTypes of Hot Coffee:\n");
+float selectHotCoffee() {
+    printf("\nTypes of Hot Coffee:\n");
     printf("1. Cappuccino coffee (Rs.70.00)\n");
     printf("2. Filter coffee (Rs.30.00)\n");
     printf("3. Latte coffee (Rs.85.00)\n");
