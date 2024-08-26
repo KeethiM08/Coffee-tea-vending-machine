@@ -22,8 +22,8 @@ int main() {
     printf("Welcome to the Coffee or Tea Vending Machine!\n");
 
     char activity_choice;
-    printf("press A to see the daily activity (only owner) \n");
-    printf("press T order ");
+    printf("press 'A' to see the daily activity (only owner) \n");
+    printf("press 'T' order\n ");
     scanf(" %c", &activity_choice);
 
     if (activity_choice == 'a' || activity_choice == 'A') {
