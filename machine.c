@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+// Function declarations
 float selectHotCoffee();
 float selectColdCoffee();
 float selectTea();
@@ -195,10 +197,13 @@ void loadActivity(int *num_customers, int *num_hot_coffees, int *num_cold_coffee
         *num_cookies = 0;
         return;
     }
+
+    // Read and ignore the header
     char buffer[256];
     fgets(buffer, sizeof(buffer), file); // Skip the first line
     fgets(buffer, sizeof(buffer), file); // Skip the second line
 
+    // Read values
     fscanf(file, "Number of Customers Served: %d\n", num_customers);
     fscanf(file, "Number of Hot Coffees Sold: %d\n", num_hot_coffees);
     fscanf(file, "Number of Cold Coffees Sold: %d\n", num_cold_coffees);
@@ -217,13 +222,15 @@ int main() {
     int num_cold_coffees = 0;
     int num_teas = 0;
     int num_customers = 0;
+
+    // Load previous activity
     loadActivity(&num_customers, &num_hot_coffees, &num_cold_coffees, &num_teas, &num_cookies);
 
     printf("Welcome to the Coffee or Tea Vending Machine!\n");
 
     char activity_choice;
-    printf("press A to see the daily activity (only owner) \n");
-    printf("press T order ");
+    printf("press A or a to see the daily activity (only owner) \n");
+    printf("press T or t order ");
     scanf(" %c", &activity_choice);
 
     if (activity_choice == 'a' || activity_choice == 'A') {
@@ -289,27 +296,16 @@ int main() {
                 break;
             }
         }
-
-        printf("\nYour order summary:\n");
-        printf("Number of Hot Coffees: %d\n", num_hot_coffees);
-        printf("Number of Cold Coffees: %d\n", num_cold_coffees);
-        printf("Number of Teas: %d\n", num_teas);
-        printf("Number of Cookies: %d\n", num_cookies);
         printf("Your total bill is: Rs.%.2f\n", total_bill);
 
         char post_summary_choice;
-        printf("Would you like to pay the bill (p) or view daily activities (a)? ");
+        printf("Please pay the bill (p/P)  ");
         scanf(" %c", &post_summary_choice);
 
         if (post_summary_choice == 'p' || post_summary_choice == 'P') {
             printf("Thank you for your payment! Have a nice day!\n");
-        } else if (post_summary_choice == 'a' || post_summary_choice == 'A') {
-            if (checkPassword()) {
-                displayActivity(num_customers, num_hot_coffees, num_cold_coffees, num_teas, num_cookies);
-            } else {
-                printf("Access denied.\n");
-            }
-        } else {
+        }  
+           else {
             printf("Invalid choice.\n");
         }
 
