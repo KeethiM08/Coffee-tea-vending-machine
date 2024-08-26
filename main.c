@@ -90,26 +90,17 @@ int main() {
             }
         }
 
-        printf("\nYour order summary:\n");
-        printf("Number of Hot Coffees: %d\n", num_hot_coffees);
-        printf("Number of Cold Coffees: %d\n", num_cold_coffees);
-        printf("Number of Teas: %d\n", num_teas);
-        printf("Number of Cookies: %d\n", num_cookies);
+       
         printf("Your total bill is: Rs.%.2f\n", total_bill);
 
         char post_summary_choice;
-        printf("Would you like to pay the bill (p) or view daily activities (a)? ");
+        printf("Please pay the bill (p/P)  ");
         scanf(" %c", &post_summary_choice);
 
         if (post_summary_choice == 'p' || post_summary_choice == 'P') {
             printf("Thank you for your payment! Have a nice day!\n");
-        } else if (post_summary_choice == 'a' || post_summary_choice == 'A') {
-            if (checkPassword()) {
-                displayActivity(num_customers, num_hot_coffees, num_cold_coffees, num_teas, num_cookies);
-            } else {
-                printf("Access denied.\n");
-            }
-        } else {
+        }  
+           else {
             printf("Invalid choice.\n");
         }
 
